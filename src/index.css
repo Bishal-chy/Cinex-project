@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply md:overflow-x-hidden overflow-x-hidden;
+        @apply font-[Raleway];
+    }
+    li {
+        @apply px-4;
+        @apply cursor-pointer
+    }
+}
+
+@layer utilities {
+    .nav {
+        @apply relative tracking-[1px] hover:scale-105 duration-300;
+    }
+    .nav::after {
+        @apply content-[''] bg-[#FF785A] h-[3px] w-[0%] left-0 right-0 mx-auto bottom-3 sm:-bottom-[5px] rounded-xl absolute transition-all duration-300;
+    }
+    .nav:hover::after {
+        @apply w-[70%];
+    }
+}
